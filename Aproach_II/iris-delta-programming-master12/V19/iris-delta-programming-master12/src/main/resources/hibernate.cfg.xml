@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="show_sql">false</property>
+        <property name="format_sql">true</property>
+        <property name="hibernate.hbm2ddl.auto">create</property>    
+		
+		<!-- Uncomment on first time run, create the schema and do some inserts. -->
+		<!--		  
+        <property name="hibernate.hbm2ddl.auto">create</property>
+        <property name="hibernate.hbm2ddl.import_files">initial_data.sql</property>         
+         -->
+        
+        <!-- PostreSQL -->
+        <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/iris</property>
+        <property name="connection.username">iris</property>
+        <property name="connection.password">123</property>
+        
+        <!-- SQLite -->
+        <!-- 
+        <property name="dialect">org.hibernate.dialect.SQLiteDialect</property>
+        <property name="connection.driver_class">org.sqlite.JDBC</property>
+        <property name="connection.url">jdbc:sqlite:${user.home}/.iris/iris.db</property>
+        <property name="connection.username"></property>
+        <property name="connection.password"></property>    
+        -->      
+    </session-factory>
+</hibernate-configuration>

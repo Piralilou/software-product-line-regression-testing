@@ -1,0 +1,141 @@
+delta dAddressBookRelational {
+	modifies br.unb.cic.iris.persistence.relational.HibernateUtil {
+		adds import br.unb.cic.iris.core.model.AddressBookEntry;
+		modifies configureClasses() {
+			classList.add(AddressBookEntry.class);
+			original();
+		}
+	}
+
+	removes br.unb.cic.iris.core.model.AddressBookEntry;
+
+	adds {
+		package br.unb.cic.iris.core.model;
+
+		import javax.persistence.Column;
+		import javax.persistence.Entity;
+		import javax.persistence.GeneratedValue;
+		import org.hibernate.annotations.GenericGenerator;
+		import javax.persistence.Id;
+		import javax.persistence.Table;
+
+		@Entity
+		@Table(name = "TB_ADDRESS_BOOK")
+		public class AddressBookEntry {
+
+			@Id
+			@GeneratedValue(generator = "uuid")
+			@GenericGenerator(name = "uuid", strategy = "uuid2")
+			private String id;
+
+			@Column(unique = true)
+			private String nick;
+
+			@Column
+			private String address;
+
+			public AddressBookEntry() {
+			}
+
+			public AddressBookEntry(String nick, String address) {
+				this.nick = nick;
+				this.address = address;
+			}
+
+			public String getId() {
+				return id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
+			}
+
+			public String getNick() {
+				return nick;
+			}
+
+			public void setNick(String nick) {
+				this.nick = nick;
+			}
+
+			public String getAddress() {
+				return address;
+			}
+
+			public void setAddress(String address) {
+				this.address = address;
+			}
+		}
+	}
+
+	adds {
+		package br.unb.cic.iris.persistence.relational;
+
+		import java.util.List;
+
+		import br.unb.cic.iris.core.exception.DBException;
+		import br.unb.cic.iris.core.model.AddressBookEntry;
+		import br.unb.cic.iris.persistence.IAddressBookDAO;
+
+		public final class AddressBookDAO extends AbstractDAO<AddressBookEntry>
+		implements IAddressBookDAO {
+
+			private static final String FIND_BY_NICK_NAME = "FROM AddressBookEntry a " +
+			"where a.nick = :pNick";
+
+			private static AddressBookDAO instance;
+
+			private AddressBookDAO() {
+			}
+
+			public static AddressBookDAO instance() {
+				if(instance == null) {
+					instance = new AddressBookDAO();
+				}
+				return instance;
+			}
+
+			@Override
+			public void save(AddressBookEntry entry) throws DBException {
+				super.saveOrUpdate(entry);
+			}
+
+			@Override
+			public AddressBookEntry find(String nick) throws DBException {
+				try {
+					startSession(false);
+					List<AddressBookEntry> entries =
+					session.createQuery(FIND_BY_NICK_NAME).setParameter("pNick",
+						nick).setCacheable(false).list();
+
+					if(entries != null && entries.size() == 1) {
+						return entries.get(0);
+					}
+					return null;
+				}
+				catch(Exception e) {
+					throw new DBException("could not save the address book entry", e);
+				}
+				finally {
+					closeSession();
+				}
+			}
+
+			@Override
+			public void delete(String nick) throws DBException {
+				AddressBookEntry entry = find(nick);
+				if(entry != null) {
+					super.delete(entry);
+				}
+			}
+		}
+	}
+
+	modifies br.unb.cic.iris.core.SystemFacade {
+		adds import br.unb.cic.iris.persistence.relational.AddressBookDAO;
+	}
+
+	modifies br.unb.cic.iris.mail.EmailClient {
+		adds import br.unb.cic.iris.persistence.relational.AddressBookDAO;
+	}
+}

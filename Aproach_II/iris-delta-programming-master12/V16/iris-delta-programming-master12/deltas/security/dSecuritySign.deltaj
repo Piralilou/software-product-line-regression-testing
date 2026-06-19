@@ -1,0 +1,20 @@
+delta dSecuritySign {
+	modifies br.unb.cic.iris.mail.EmailSender {
+		adds import javax.mail.Address;
+		modifies outgoing(MimeMessage msg, List<SecurityType> types) {
+			Address[] froms = msg.getFrom();
+			String email = froms == null ? null : ((InternetAddress) froms[0]).getAddress();			
+			msg = PgpManager.instance().sign(session.getSession(), msg, email);
+			return original(msg,types);
+		}
+	}
+	modifies br.unb.cic.iris.mail.pgp.PgpManager {
+			adds public MimeMessage sign(Session mailSession, MimeMessage msg, String alias) throws Exception {
+				System.out.println("Signing message: " + alias);
+				Key privateKey = keyManager.getPrivateKey(alias);
+				System.out.println("privateKey=" + privateKey);
+				return cryptoUtils.signMessage(mailSession, msg, privateKey);
+			}
+		
+	}	
+}

@@ -1,0 +1,112 @@
+SPL IrisDeltaJ {
+
+	Features = 
+		 {services, sendMessage, receiveMessage, persistence, relational, 
+		 nonRelational, ui, console, gui, addressBook, tagging, search, 
+		 simpleSearch, advancedSearch, security, sign, verify, encrypt, decrypt,
+		 category}
+
+	Deltas = 
+	       {dBase, dBaseException, dBaseCommand, dBaseModel, dBasePersistence, dBaseMail, dBaseFacade, 
+	       dGmailProvider, dYahooProvider, dOutlookProvider, dPersistenceRelational, dPersistenceLucene, 
+	       dAddressBook, dAddressBookRelational, dAddressBookLucene, dAddressBookConsole, dAddressBookFacade, dTestAddressBookDAO, 
+	       dTestFolderDAO, 
+	       dTagBase, dTagRelational, dTestRelationalTagDAO, dTagConsole, dConsole, dTagLucene, dSearchConsole, 
+	       dSearchFacade, dSimpleSearch, dAdvancedSearch, dSecurityPgp, dSecurityCommandSendEncrypt, 
+	       dSecurityCommandSendSign, dSecurityCommandSendSignEncrypt, dSecurityBaseMail, dSecurityFacade, 
+	       dSecuritySign, dSecurityVerify, dSecurityEncrypt, dSecurityDecrypt,
+	       dCategoryBase, dCategoryConsole, dCategoryRelational, dCategoryUtil}
+	Constraints {
+		services AND persistence AND ui OR addressBook OR tagging OR search OR security OR category;
+		services AND (sendMessage AND receiveMessage);  
+		persistence AND (relational XOR nonRelational);
+		search AND (simpleSearch XOR advancedSearch);
+		security AND (sign OR verify OR encrypt OR decrypt);
+		(sign IMPLIES verify) AND (verify IMPLIES sign);
+		(encrypt IMPLIES decrypt) AND (decrypt IMPLIES encrypt);
+		ui AND (console XOR gui);
+	}
+
+	Partitions {
+		
+		{
+			dBase,dBaseCommand, dBaseException, dBaseModel, dBasePersistence, dBaseMail, dGmailProvider, dYahooProvider, 
+			dOutlookProvider, dBaseFacade
+		} 
+		when (services & sendMessage & receiveMessage);
+
+		{dPersistenceRelational, dTestFolderDAO} 
+		when (relational);
+		
+		{dPersistenceLucene} 
+		when (nonRelational);
+
+		{dAddressBook, dAddressBookRelational, dAddressBookConsole, dAddressBookFacade, dTestAddressBookDAO} 
+		when (relational & addressBook);
+		
+		{dAddressBook, dAddressBookLucene, dAddressBookConsole, dAddressBookFacade} 
+		when (nonRelational & addressBook);
+		
+		{dSearchFacade, dSearchConsole, dAdvancedSearch} 
+		when (nonRelational & advancedSearch);
+
+		{dSearchFacade, dSearchConsole, dSimpleSearch} 
+		when (relational & simpleSearch);
+		
+		{dTagBase, dTagRelational, dTagConsole, dTestRelationalTagDAO} 
+		when (relational & tagging);
+		
+		{dCategoryBase, dCategoryRelational, dCategoryConsole, dCategoryUtil} 
+		when (relational & category);
+		
+		{dTagBase, dTagLucene, dTagConsole} 
+		when (nonRelational & tagging);
+			
+		{dConsole} 
+		when (console);
+
+		/* console must come after before security */
+		{dSecurityPgp, dSecurityBaseMail, dSecurityFacade} 
+		when (security AND (sign OR verify OR encrypt OR decrypt));
+
+		{dSecuritySign, dSecurityVerify} 
+		when (security & sign & verify);
+ 
+		{dSecurityEncrypt, dSecurityDecrypt} 
+		when (security & encrypt & decrypt);
+
+		{dSecurityCommandSendSign}
+		when (~encrypt & sign);
+		
+		{dSecurityCommandSendEncrypt}
+		when (~sign & encrypt);
+
+		{dSecurityCommandSendSignEncrypt, dSecurityCommandSendSign, dSecurityCommandSendEncrypt}
+		when ((encrypt & decrypt) AND (sign & verify));
+	}
+
+Products {
+ //SimpleRelational = { services,sendMessage,receiveMessage, relational,console};
+ //SimpleRelationalAddressBook = {services, sendMessage, receiveMessage, relational, addressBook, console};
+ //SimpleRelationalTag = {services, sendMessage, receiveMessage, relational, console,tagging};
+ //SimpleRelationalAddressBookTag = {services, sendMessage, receiveMessage, relational, addressBook, tagging, console};
+ //SimpleRelationalSearch = {services, sendMessage, receiveMessage, relational, simpleSearch, console};
+ //SimpleRelationalSearchTag = {services, sendMessage, receiveMessage, relational, tagging, simpleSearch, console};
+ //SimpleRelationalSearchAddressBook = {services, sendMessage, receiveMessage, relational,addressBook,simpleSearch,console};		
+ //CompleteRelational = {services, sendMessage, receiveMessage, relational, addressBook, tagging, simpleSearch, console};
+ //SimpleLucene = {services, sendMessage, receiveMessage, nonRelational, console};
+ //SimpleLuceneAddressBook = {services, sendMessage, receiveMessage, nonRelational,addressBook, console};
+ //SimpleLuceneTag = {services, sendMessage, receiveMessage, nonRelational, tagging, console};
+ //SimpleLuceneAddressBookTag = {services, sendMessage, receiveMessage, nonRelational,tagging,addressBook, console};		
+ //SimpleLuceneSearch = {services, sendMessage, receiveMessage, nonRelational, advancedSearch, console};
+ //SimpleLuceneSearchTag = {services, sendMessage, receiveMessage, nonRelational, advancedSearch,tagging, console};
+ //SimpleLuceneSearchAddressBook = {services, sendMessage, receiveMessage, nonRelational,addressBook, advancedSearch, console};	
+ //CompleteLucene = {services, sendMessage, receiveMessage, nonRelational, addressBook, tagging, console, advancedSearch};
+ //SimpleRelationalSecuritySignVerify ={services, sendMessage, receiveMessage,relational, console,security, sign, verify};
+ //SimpleRelationalSecurityEncryptDecrypt = {services, sendMessage, receiveMessage, relational, console, security, encrypt, decrypt};
+ SimpleRelationalSecurityComplete = {services, sendMessage, receiveMessage, nonRelational,addressBook, tagging, console};
+ //SimpleRelationalSecurityComplete = {services, sendMessage, receiveMessage, relational, addressBook, tagging, console
+ //,security,sign, verify, encrypt, decrypt};
+ //SimpleRelationalCategory = {services, sendMessage, receiveMessage, relational, category, console};
+} 
+} 

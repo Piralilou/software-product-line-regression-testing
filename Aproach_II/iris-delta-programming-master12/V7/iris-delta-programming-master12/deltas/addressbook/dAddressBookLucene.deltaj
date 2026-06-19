@@ -1,0 +1,79 @@
+delta dAddressBookLucene {
+	adds {
+		package br.unb.cic.iris.persistence.lucene;
+
+		import java.util.List;
+
+		import org.apache.lucene.document.Document;
+		import org.apache.lucene.document.Field.Store;
+		import org.apache.lucene.document.StringField;
+		import org.apache.lucene.index.Term;
+		import org.apache.lucene.search.Query;
+		import org.apache.lucene.search.TermQuery;
+		import br.unb.cic.iris.core.exception.EmailException;
+		import br.unb.cic.iris.core.model.AddressBookEntry;
+		import br.unb.cic.iris.persistence.IAddressBookDAO;
+
+		public final class AddressBookDAO extends AbstractDAO<AddressBookEntry> implements IAddressBookDAO {
+
+			private static AddressBookDAO instance;
+
+			private AddressBookDAO() {
+				this.type = "address_book";
+			}
+
+			public static AddressBookDAO instance() {
+				if(instance == null) {
+					instance = new AddressBookDAO();
+				}
+				return instance;
+			}
+
+			@Override
+			public void save(AddressBookEntry entry) throws EmailException {
+				saveOrUpdate(entry);
+			}
+
+			@Override
+			public void delete(String nick) throws EmailException {
+				delete(find(nick));
+			}
+
+			@Override
+			public AddressBookEntry find(String nick) throws EmailException {
+				Query nameQuery = new TermQuery(new Term("nick", nick));
+				List<AddressBookEntry> result = findByTerms(new Query[] { nameQuery });
+				if (result.isEmpty()) {
+					throw new EmailException(String.format("Address book entry for nick '%s' not found", nick), null);
+				}
+				return result.iterator().next();
+			}
+
+			@Override
+			protected AddressBookEntry fromDocument(Document doc) throws
+			Exception {
+				AddressBookEntry entry = new AddressBookEntry();
+				entry.setId(doc.get("id"));
+				entry.setNick(doc.get("nick"));
+				entry.setAddress(doc.get("address"));
+				return entry;
+			}
+			
+			protected Document toDocument(AddressBookEntry e) {
+				Document d = new Document();
+				d.add(new StringField("id", String.valueOf(e.getId()), Store.YES));
+				d.add(new StringField("nick", e.getNick(), Store.YES));
+				d.add(new StringField("address", e.getAddress(), Store.YES));
+				return d;
+			}
+
+		}
+	}
+
+	modifies br.unb.cic.iris.core.SystemFacade {
+		adds import br.unb.cic.iris.persistence.lucene.AddressBookDAO;
+	}
+	modifies br.unb.cic.iris.mail.EmailClient {
+		adds import br.unb.cic.iris.persistence.lucene.AddressBookDAO;
+	}
+}

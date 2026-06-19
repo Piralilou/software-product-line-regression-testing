@@ -1,0 +1,190 @@
+delta dBaseFacade {
+	adds {
+		package br.unb.cic.iris.core;
+
+		import java.util.Date;
+		import java.util.List;
+		
+		import javax.mail.search.ComparisonTerm;
+		import javax.mail.search.ReceivedDateTerm;
+		import javax.mail.search.SearchTerm;
+
+		import br.unb.cic.iris.core.model.Status;
+		import br.unb.cic.iris.i18n.MessageBundle;		
+		import br.unb.cic.iris.core.exception.EmailException;
+		import br.unb.cic.iris.core.exception.EmailUncheckedException;
+		
+		import br.unb.cic.iris.core.model.EmailMessage;
+		import br.unb.cic.iris.core.model.IrisFolder;
+		import br.unb.cic.iris.mail.EmailClient;
+		import br.unb.cic.iris.mail.EmailProvider;
+		import br.unb.cic.iris.mail.IEmailClient;
+		import br.unb.cic.iris.mail.provider.DefaultProvider;
+		import br.unb.cic.iris.mail.provider.ProviderManager;
+		import br.unb.cic.iris.persistence.IEmailDAO;
+		
+		public final class SystemFacade {
+			private static final SystemFacade instance = new SystemFacade();
+		
+			private IEmailClient client;
+			private EmailProvider provider;
+		
+			private Status status = Status.NOT_CONNECTED;
+		
+			private SystemFacade() {
+				// load config file
+				Configuration config = new Configuration();
+				// create a default provider based on properties loaded
+				provider = new DefaultProvider(config.getProperties());
+				// register the default provider
+				ProviderManager.instance().addProvider(provider);
+				// initiate connection
+				connect(provider);
+			}
+		
+			public static SystemFacade instance() {
+				return instance;
+			}
+		
+			public void connect(EmailProvider provider) {
+				setStatus(Status.NOT_CONNECTED);
+				this.provider = provider;
+				client = new EmailClient(provider);
+				setStatus(Status.CONNECTED);
+			}
+		
+			public void send(EmailMessage message) throws EmailException {
+				verifyConnection();
+				client.send(message);
+				message.setDate(new Date());
+				saveMessage(message, IrisFolder.OUTBOX);
+			}
+			
+			private void saveMessage(EmailMessage message) throws EmailException{
+				saveMessage(message, IrisFolder.OUTBOX);
+			}
+			private void saveMessage(EmailMessage message, String folderName) throws EmailException{
+				IEmailDAO dao = EmailDAO.instance();
+				IrisFolder folder = FolderDAO.instance().findByName(folderName);
+				message.setFolder(folder);
+				dao.saveMessage(message);
+			}
+
+			public List<IrisFolder> listRemoteFolders() throws EmailException {
+				verifyConnection();
+				return client.listFolders();
+			}
+			
+			public void downloadMessages(String folder) throws EmailException {
+				verifyConnection();
+				
+				SearchTerm searchTerm = null;
+				IEmailDAO dao = EmailDAO.instance();
+				
+				Date lastMessageReceived = dao.lastMessageReceived();
+				System.out.println("**************************** lastMessageReceived="+lastMessageReceived);
+				if(lastMessageReceived != null){
+					// search for newer messages (relative to lastMessageReceived)
+					searchTerm = new ReceivedDateTerm(ComparisonTerm.GT, lastMessageReceived);
+				}
+				
+				//retrieve messages from server
+				List<EmailMessage> messages = client.getMessages(folder, searchTerm);
+				
+				//persist messages
+				for(EmailMessage message: messages) {
+					saveMessage(message, folder);
+				}
+			}
+			
+			private void verifyConnection() {
+				if (!isConnected()) {
+					throw new EmailUncheckedException(MessageBundle.message("error.not.connected"));
+				}
+			}
+		
+			public boolean isConnected() {
+				return Status.CONNECTED == getStatus();
+			}
+		
+			private void setStatus(Status status) {
+				this.status = status;
+				// notify listerners ...
+			}
+		
+			public Status getStatus() {
+				return status;
+			}
+		
+			public EmailProvider getProvider() {
+				return provider;
+				// TODO clonar pq nao tem como criar um Properties imutavel (nao tem via
+				// api padrao)
+				/*
+				 * try { return provider.clone(); } catch (CloneNotSupportedException e)
+				 * { //TODO mensagem throw new EmailUncheckedException("", e); }
+				 */
+			}		
+		}
+	}
+	
+	adds {
+		package br.unb.cic.iris.core;
+
+		import br.unb.cic.iris.core.exception.EmailException;
+		import br.unb.cic.iris.core.model.EmailMessage;
+		import br.unb.cic.iris.core.model.IrisFolder;
+		
+		import java.util.List;
+		
+		public final class FolderManager {
+			private static final FolderManager instance = new FolderManager();
+			private static final String ROOT_FOLDER = "ROOT";
+			private IrisFolder currentFolder = new IrisFolder(ROOT_FOLDER);
+			
+			private List<EmailMessage> currentMessages;
+			//private int pageNumber = 0;
+			//private int pageSize = 10;
+		
+			
+			private FolderManager() {
+			}
+			public static FolderManager instance() {
+				return instance;
+			}
+			public String getCurrentFolderName() {
+				return currentFolder.getName();
+			}
+			public List<EmailMessage> getCurrentMessages(){
+				return currentMessages;
+			}
+			//public void changeToFolder(Integer folderId) throws EmailException {
+			//	changeToFolder(folderId+"");
+			//}
+			public void changeToFolder(String folderName) throws EmailException {
+				IrisFolder folder = FolderDAO.instance().findByName(folderName);
+				if(folder != null) {
+					currentFolder = folder;
+					currentMessages = new java.util.ArrayList<EmailMessage>();
+				}
+			}
+			
+			public List<IrisFolder> listFolders() throws EmailException {
+				return FolderDAO.instance().findAll();
+			}
+			public List<EmailMessage> listFolderMessages() throws EmailException {
+				if(currentFolder == null || currentFolder.getId() == null) {
+					return new java.util.ArrayList<EmailMessage>();
+				}
+				//return EmailDAO.instance().listMessages(currentFolder.getId());
+				//TODO ver como ficara a paginacao
+				currentMessages = EmailDAO.instance().listMessages(currentFolder.getId());
+				return currentMessages;
+			}
+			
+			public EmailMessage getMessage(String id) throws EmailException {
+				return EmailDAO.instance().findById(id);
+			}
+		}
+	}
+}

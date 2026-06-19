@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="kwicdeltaj.prod1.kwic_Ekstazi" project="kwic-deltaj" tests="106" started="106" failures="2" errors="7" ignored="0">
+  <testsuite name="kwicdeltaj.prod1.kwic.SaveScreen_ESTest" time="0.456">
+    <testcase name="test3_oneItem_printsKeywordRightLeft" classname="kwicdeltaj.prod1.kwic.SaveScreen_ESTest" time="0.316"/>
+    <testcase name="test4_nullFields_doesNotCrash_andPrintsNullLiterals" classname="kwicdeltaj.prod1.kwic.SaveScreen_ESTest" time="0.027"/>
+    <testcase name="test5_manyItems_printsAllLines" classname="kwicdeltaj.prod1.kwic.SaveScreen_ESTest" time="0.024"/>
+    <testcase name="test7_whitespacePreserved_inPrintedContext" classname="kwicdeltaj.prod1.kwic.SaveScreen_ESTest" time="0.014"/>
+    <testcase name="test0" classname="kwicdeltaj.prod1.kwic.SaveScreen_ESTest" time="0.041">
+      <failure>java.lang.AssertionError: Cannot load/analyze class kwicdeltaj.prod3.kwic.SaveScreen&#13;
+	at org.evosuite.runtime.EvoAssertions.assertThrownBy(EvoAssertions.java:88)&#13;
+	at org.evosuite.runtime.EvoAssertions.verifyException(EvoAssertions.java:49)&#13;
+	at kwicdeltaj.prod1.kwic.SaveScreen_ESTest.test0(SaveScreen_ESTest.java:51)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)&#13;
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#13;
+	at java.lang.reflect.Method.invoke(Method.java:498)&#13;
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)&#13;
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)&#13;
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)&#13;
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:299)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:293)&#13;
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)&#13;
+	at java.lang.Thread.run(Thread.java:750)&#13;
+&#13;
+</failure>
+    </testcase>
+    <testcase name="test1" classname="kwicdeltaj.prod1.kwic.SaveScreen_ESTest" time="0.01"/>
+    <testcase name="test6_unicodePersian_printsCorrectly" classname="kwicdeltaj.prod1.kwic.SaveScreen_ESTest" time="0.011"/>
+    <testcase name="test2_emptyList_printsOnlyHeader" classname="kwicdeltaj.prod1.kwic.SaveScreen_ESTest" time="0.011"/>
+  </testsuite>
+  <testsuite name="kwicdeltaj.prod1.kwic.StringStorage_ESTest" time="0.051">
+    <testcase name="test2" classname="kwicdeltaj.prod1.kwic.StringStorage_ESTest" time="0.024"/>
+    <testcase name="test11_setNullValues_allowedAndReturned" classname="kwicdeltaj.prod1.kwic.StringStorage_ESTest" time="0.002"/>
+    <testcase name="test3" classname="kwicdeltaj.prod1.kwic.StringStorage_ESTest" time="0.002"/>
+    <testcase name="test4" classname="kwicdeltaj.prod1.kwic.StringStorage_ESTest" time="0.002"/>
+    <testcase name="test5" classname="kwicdeltaj.prod1.kwic.StringStorage_ESTest" time="0.001"/>
+    <testcase name="test6" classname="kwicdeltaj.prod1.kwic.StringStorage_ESTest" time="0.002"/>
+    <testcase name="test7" classname="kwicdeltaj.prod1.kwic.StringStorage_ESTest" time="0.002"/>
+    <testcase name="test13_unicodePersianAndEmoji" classname="kwicdeltaj.prod1.kwic.StringStorage_ESTest" time="0.001"/>
+    <testcase name="test8" classname="kwicdeltaj.prod1.kwic.StringStorage_ESTest" time="0.002"/>
+    <testcase name="test10_overwriteValues_lastWriteWins" classname="kwicdeltaj.prod1.kwic.StringStorage_ESTest" time="0.002"/>
+    <testcase name="test9_setAllFields_thenGettersReturnSame" classname="kwicdeltaj.prod1.kwic.StringStorage_ESTest" time="0.001"/>
+    <testcase name="test12_whitespacePreserved" classname="kwicdeltaj.prod1.kwic.StringStorage_ESTest" time="0.002"/>
+    <testcase name="test14_directFieldMutation_reflectedInGetters" classname="kwicdeltaj.prod1.kwic.StringStorage_ESTest" time="0.002"/>
+    <testcase name="test0" classname="kwicdeltaj.prod1.kwic.StringStorage_ESTest" time="0.003"/>
+    <testcase name="test1" classname="kwicdeltaj.prod1.kwic.StringStorage_ESTest" time="0.003"/>
+  </testsuite>
+  <testsuite name="kwicdeltaj.prod1.kwic.StopWordManager_ESTest" time="0.104">
+    <testcase name="test2" classname="kwicdeltaj.prod1.kwic.StopWordManager_ESTest" time="0.038"/>
+    <testcase name="test4_whitespacePreserved" classname="kwicdeltaj.prod1.kwic.StopWordManager_ESTest" time="0.002"/>
+    <testcase name="test6_largeFile_manyLines" classname="kwicdeltaj.prod1.kwic.StopWordManager_ESTest" time="0.044"/>
+    <testcase name="test3_multipleLines_preserveOrder" classname="kwicdeltaj.prod1.kwic.StopWordManager_ESTest" time="0.003"/>
+    <testcase name="test5_unicodePersian" classname="kwicdeltaj.prod1.kwic.StopWordManager_ESTest" time="0.003"/>
+    <testcase name="test8_emptyPath_returnsEmptyList" classname="kwicdeltaj.prod1.kwic.StopWordManager_ESTest" time="0.003"/>
+    <testcase name="test7_lastLineWithoutTrailingNewline" classname="kwicdeltaj.prod1.kwic.StopWordManager_ESTest" time="0.004"/>
+    <testcase name="test0" classname="kwicdeltaj.prod1.kwic.StopWordManager_ESTest" time="0.003"/>
+    <testcase name="test1" classname="kwicdeltaj.prod1.kwic.StopWordManager_ESTest" time="0.004"/>
+  </testsuite>
+  <testsuite name="kwicdeltaj.prod1.kwic.Main_ESTest" time="0.137">
+    <testcase name="test4" classname="kwicdeltaj.prod1.kwic.Main_ESTest" time="0.032"/>
+    <testcase name="test5" classname="kwicdeltaj.prod1.kwic.Main_ESTest" time="0.003"/>
+    <testcase name="test2" classname="kwicdeltaj.prod1.kwic.Main_ESTest" time="0.003"/>
+    <testcase name="test7_main_withMultipleSpaces_noCrash" classname="kwicdeltaj.prod1.kwic.Main_ESTest" time="0.036"/>
+    <testcase name="test3" classname="kwicdeltaj.prod1.kwic.Main_ESTest" time="0.006"/>
+    <testcase name="test11_main_calledTwice_withDifferentInputs_noCrash" classname="kwicdeltaj.prod1.kwic.Main_ESTest" time="0.006"/>
+    <testcase name="test8_getOutput_returnsSaveFile" classname="kwicdeltaj.prod1.kwic.Main_ESTest" time="0.021">
+      <failure>
+        <expected>kwicdeltaj.prod1.kwic.SaveFile</expected>
+        <actual>kwicdeltaj.prod1.kwic.SaveScreen</actual>
+        org.junit.ComparisonFailure: expected:&lt;...ltaj.prod1.kwic.Save[File]&gt; but was:&lt;...ltaj.prod1.kwic.Save[Screen]&gt;&#13;
+	at org.junit.Assert.assertEquals(Assert.java:117)&#13;
+	at org.junit.Assert.assertEquals(Assert.java:146)&#13;
+	at kwicdeltaj.prod1.kwic.Main_ESTest.test8_getOutput_returnsSaveFile(Main_ESTest.java:123)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)&#13;
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#13;
+	at java.lang.reflect.Method.invoke(Method.java:498)&#13;
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)&#13;
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)&#13;
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)&#13;
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:299)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:293)&#13;
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)&#13;
+	at java.lang.Thread.run(Thread.java:750)&#13;
+&#13;
+
+      </failure>
+    </testcase>
+    <testcase name="test10_main_withUnicodePersian_noCrash" classname="kwicdeltaj.prod1.kwic.Main_ESTest" time="0.008"/>
+    <testcase name="test6_main_withEmptyStopWords_simpleInput_noCrash" classname="kwicdeltaj.prod1.kwic.Main_ESTest" time="0.007"/>
+    <testcase name="test9_getInput_returnsFileBasedStorageManager" classname="kwicdeltaj.prod1.kwic.Main_ESTest" time="0.003"/>
+    <testcase name="test0" classname="kwicdeltaj.prod1.kwic.Main_ESTest" time="0.006"/>
+    <testcase name="test1" classname="kwicdeltaj.prod1.kwic.Main_ESTest" time="0.005"/>
+  </testsuite>
+  <testsuite name="kwicdeltaj.prod1.kwic.IndexStorage_ESTest" time="0.03">
+    <testcase name="test2" classname="kwicdeltaj.prod1.kwic.IndexStorage_ESTest" time="0.021"/>
+    <testcase name="test3" classname="kwicdeltaj.prod1.kwic.IndexStorage_ESTest" time="0.001"/>
+    <testcase name="test4" classname="kwicdeltaj.prod1.kwic.IndexStorage_ESTest" time="0.001"/>
+    <testcase name="test5" classname="kwicdeltaj.prod1.kwic.IndexStorage_ESTest" time="0.001"/>
+    <testcase name="test9_directFieldMutation_reflectedInGetter" classname="kwicdeltaj.prod1.kwic.IndexStorage_ESTest" time="0.001"/>
+    <testcase name="test6_setLineToNull_returnsNull" classname="kwicdeltaj.prod1.kwic.IndexStorage_ESTest" time="0.001"/>
+    <testcase name="test7_overwritePosition_lastOneWins" classname="kwicdeltaj.prod1.kwic.IndexStorage_ESTest" time="0.001"/>
+    <testcase name="test0" classname="kwicdeltaj.prod1.kwic.IndexStorage_ESTest" time="0.001"/>
+    <testcase name="test8_setLineAndPositionTogether" classname="kwicdeltaj.prod1.kwic.IndexStorage_ESTest" time="0.001"/>
+    <testcase name="test1" classname="kwicdeltaj.prod1.kwic.IndexStorage_ESTest" time="0.001"/>
+  </testsuite>
+  <testsuite name="kwicdeltaj.prod1.kwic.IndexManager_ESTest" time="0.187">
+    <testcase name="test08" classname="kwicdeltaj.prod1.kwic.IndexManager_ESTest" time="0.026"/>
+    <testcase name="test09" classname="kwicdeltaj.prod1.kwic.IndexManager_ESTest" time="0.001"/>
+    <testcase name="test15_sameWordMultipleTimes_accumulatesIndexes" classname="kwicdeltaj.prod1.kwic.IndexManager_ESTest" time="0.001"/>
+    <testcase name="test06" classname="kwicdeltaj.prod1.kwic.IndexManager_ESTest" time="0.14">
+      <error>java.lang.OutOfMemoryError: Java heap space&#13;
+	at java.util.HashMap.resize(HashMap.java:705)&#13;
+	at java.util.HashMap.putVal(HashMap.java:630)&#13;
+	at java.util.HashMap.put(HashMap.java:613)&#13;
+	at kwicdeltaj.prod1.kwic.IndexManager.initMap(IndexManager.java:22)&#13;
+	at kwicdeltaj.prod1.kwic.IndexManager_ESTest.test06(IndexManager_ESTest.java:118)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)&#13;
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#13;
+	at java.lang.reflect.Method.invoke(Method.java:498)&#13;
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)&#13;
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)&#13;
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)&#13;
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:299)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:293)&#13;
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)&#13;
+	at java.lang.Thread.run(Thread.java:750)&#13;
+&#13;
+</error>
+    </testcase>
+    <testcase name="test14_occurrencesOfWord_returnsCorrectList" classname="kwicdeltaj.prod1.kwic.IndexManager_ESTest" time="0.001"/>
+    <testcase name="test07" classname="kwicdeltaj.prod1.kwic.IndexManager_ESTest" time="0.001"/>
+    <testcase name="test00" classname="kwicdeltaj.prod1.kwic.IndexManager_ESTest" time="0.001"/>
+    <testcase name="test11" classname="kwicdeltaj.prod1.kwic.IndexManager_ESTest" time="0.001"/>
+    <testcase name="test01" classname="kwicdeltaj.prod1.kwic.IndexManager_ESTest" time="0.002"/>
+    <testcase name="test12" classname="kwicdeltaj.prod1.kwic.IndexManager_ESTest" time="0.001"/>
+    <testcase name="test13_multipleWords_sortedOrder" classname="kwicdeltaj.prod1.kwic.IndexManager_ESTest" time="0.001"/>
+    <testcase name="test10" classname="kwicdeltaj.prod1.kwic.IndexManager_ESTest" time="0.001"/>
+    <testcase name="test04" classname="kwicdeltaj.prod1.kwic.IndexManager_ESTest" time="0.002"/>
+    <testcase name="test05" classname="kwicdeltaj.prod1.kwic.IndexManager_ESTest" time="0.002"/>
+    <testcase name="test02" classname="kwicdeltaj.prod1.kwic.IndexManager_ESTest" time="0.001"/>
+    <testcase name="test03" classname="kwicdeltaj.prod1.kwic.IndexManager_ESTest" time="0.003"/>
+    <testcase name="test16_caseSensitivity_differentKeys" classname="kwicdeltaj.prod1.kwic.IndexManager_ESTest" time="0.001"/>
+  </testsuite>
+  <testsuite name="kwicdeltaj.prod1.kwic.WordShift_ESTest" time="0.044">
+    <testcase name="test14_multipleIndexes_sameWord_twoOutputs" classname="kwicdeltaj.prod1.kwic.WordShift_ESTest" time="0.022"/>
+    <testcase name="test13_unicodePersian_words" classname="kwicdeltaj.prod1.kwic.WordShift_ESTest" time="0.001"/>
+    <testcase name="test0" classname="kwicdeltaj.prod1.kwic.WordShift_ESTest" time="0.002"/>
+    <testcase name="test1" classname="kwicdeltaj.prod1.kwic.WordShift_ESTest" time="0.001"/>
+    <testcase name="test11_lastWord_leftFilled_rightEmpty" classname="kwicdeltaj.prod1.kwic.WordShift_ESTest" time="0.001"/>
+    <testcase name="test9_middleWord_leftAndRightAreComputed" classname="kwicdeltaj.prod1.kwic.WordShift_ESTest" time="0.001"/>
+    <testcase name="test8" classname="kwicdeltaj.prod1.kwic.WordShift_ESTest" time="0.002"/>
+    <testcase name="test12_multipleSpaces_preservedViaEmptyTokens" classname="kwicdeltaj.prod1.kwic.WordShift_ESTest" time="0.001"/>
+    <testcase name="test6" classname="kwicdeltaj.prod1.kwic.WordShift_ESTest" time="0.001"/>
+    <testcase name="test7" classname="kwicdeltaj.prod1.kwic.WordShift_ESTest" time="0.001"/>
+    <testcase name="test4" classname="kwicdeltaj.prod1.kwic.WordShift_ESTest" time="0.001"/>
+    <testcase name="test5" classname="kwicdeltaj.prod1.kwic.WordShift_ESTest" time="0.001"/>
+    <testcase name="test2" classname="kwicdeltaj.prod1.kwic.WordShift_ESTest" time="0.001"/>
+    <testcase name="test15_keywordIsSetFromArgument" classname="kwicdeltaj.prod1.kwic.WordShift_ESTest" time="0.001"/>
+    <testcase name="test3" classname="kwicdeltaj.prod1.kwic.WordShift_ESTest" time="0.001"/>
+    <testcase name="test10_firstWord_leftEmpty_rightFilled" classname="kwicdeltaj.prod1.kwic.WordShift_ESTest" time="0.005"/>
+  </testsuite>
+  <testsuite name="kwicdeltaj.prod1.kwic.FileBasedStorageManager_ESTest" time="0.068">
+    <testcase name="test05" classname="kwicdeltaj.prod1.kwic.FileBasedStorageManager_ESTest" time="0.022"/>
+    <testcase name="test04" classname="kwicdeltaj.prod1.kwic.FileBasedStorageManager_ESTest" time="0.001"/>
+    <testcase name="test17_callInitTwice_appendsToExistingList" classname="kwicdeltaj.prod1.kwic.FileBasedStorageManager_ESTest" time="0.008">
+      <error>java.lang.SecurityException: Unable to create temporary file&#13;
+	at java.io.File.createTempFile(File.java:2057)&#13;
+	at java.io.File.createTempFile(File.java:2109)&#13;
+	at kwicdeltaj.prod1.kwic.FileBasedStorageManager_ESTest.createTempFileWithLines(FileBasedStorageManager_ESTest.java:172)&#13;
+	at kwicdeltaj.prod1.kwic.FileBasedStorageManager_ESTest.test17_callInitTwice_appendsToExistingList(FileBasedStorageManager_ESTest.java:242)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)&#13;
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#13;
+	at java.lang.reflect.Method.invoke(Method.java:498)&#13;
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)&#13;
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)&#13;
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)&#13;
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:299)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:293)&#13;
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)&#13;
+	at java.lang.Thread.run(Thread.java:750)&#13;
+&#13;
+</error>
+    </testcase>
+    <testcase name="test03" classname="kwicdeltaj.prod1.kwic.FileBasedStorageManager_ESTest" time="0.001"/>
+    <testcase name="test02" classname="kwicdeltaj.prod1.kwic.FileBasedStorageManager_ESTest" time="0.001"/>
+    <testcase name="test01" classname="kwicdeltaj.prod1.kwic.FileBasedStorageManager_ESTest" time="0.001"/>
+    <testcase name="test00" classname="kwicdeltaj.prod1.kwic.FileBasedStorageManager_ESTest" time="0.005"/>
+    <testcase name="test11" classname="kwicdeltaj.prod1.kwic.FileBasedStorageManager_ESTest" time="0.002"/>
+    <testcase name="test10" classname="kwicdeltaj.prod1.kwic.FileBasedStorageManager_ESTest" time="0.001"/>
+    <testcase name="test18_preserveWhitespace_inLines" classname="kwicdeltaj.prod1.kwic.FileBasedStorageManager_ESTest" time="0.002">
+      <error>java.lang.SecurityException: Unable to create temporary file&#13;
+	at java.io.File.createTempFile(File.java:2057)&#13;
+	at java.io.File.createTempFile(File.java:2109)&#13;
+	at kwicdeltaj.prod1.kwic.FileBasedStorageManager_ESTest.createTempFileWithLines(FileBasedStorageManager_ESTest.java:172)&#13;
+	at kwicdeltaj.prod1.kwic.FileBasedStorageManager_ESTest.test18_preserveWhitespace_inLines(FileBasedStorageManager_ESTest.java:258)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)&#13;
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#13;
+	at java.lang.reflect.Method.invoke(Method.java:498)&#13;
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)&#13;
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)&#13;
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)&#13;
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:299)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:293)&#13;
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)&#13;
+	at java.lang.Thread.run(Thread.java:750)&#13;
+&#13;
+</error>
+    </testcase>
+    <testcase name="test14_initWithEmptyFile_resultsInZeroLength" classname="kwicdeltaj.prod1.kwic.FileBasedStorageManager_ESTest" time="0.003">
+      <error>java.lang.SecurityException: Unable to create temporary file&#13;
+	at java.io.File.createTempFile(File.java:2057)&#13;
+	at java.io.File.createTempFile(File.java:2109)&#13;
+	at kwicdeltaj.prod1.kwic.FileBasedStorageManager_ESTest.createTempFileWithLines(FileBasedStorageManager_ESTest.java:172)&#13;
+	at kwicdeltaj.prod1.kwic.FileBasedStorageManager_ESTest.test14_initWithEmptyFile_resultsInZeroLength(FileBasedStorageManager_ESTest.java:206)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)&#13;
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#13;
+	at java.lang.reflect.Method.invoke(Method.java:498)&#13;
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)&#13;
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)&#13;
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)&#13;
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:299)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:293)&#13;
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)&#13;
+	at java.lang.Thread.run(Thread.java:750)&#13;
+&#13;
+</error>
+    </testcase>
+    <testcase name="test13_initWithMissingFile_doesNotThrow_keepsEmpty" classname="kwicdeltaj.prod1.kwic.FileBasedStorageManager_ESTest" time="0.002"/>
+    <testcase name="test09" classname="kwicdeltaj.prod1.kwic.FileBasedStorageManager_ESTest" time="0.001"/>
+    <testcase name="test08" classname="kwicdeltaj.prod1.kwic.FileBasedStorageManager_ESTest" time="0.002"/>
+    <testcase name="test15_getListString_isMutableView" classname="kwicdeltaj.prod1.kwic.FileBasedStorageManager_ESTest" time="0.003">
+      <error>java.lang.SecurityException: Unable to create temporary file&#13;
+	at java.io.File.createTempFile(File.java:2057)&#13;
+	at java.io.File.createTempFile(File.java:2109)&#13;
+	at kwicdeltaj.prod1.kwic.FileBasedStorageManager_ESTest.createTempFileWithLines(FileBasedStorageManager_ESTest.java:172)&#13;
+	at kwicdeltaj.prod1.kwic.FileBasedStorageManager_ESTest.test15_getListString_isMutableView(FileBasedStorageManager_ESTest.java:215)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)&#13;
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#13;
+	at java.lang.reflect.Method.invoke(Method.java:498)&#13;
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)&#13;
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)&#13;
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)&#13;
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:299)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:293)&#13;
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)&#13;
+	at java.lang.Thread.run(Thread.java:750)&#13;
+&#13;
+</error>
+    </testcase>
+    <testcase name="test07" classname="kwicdeltaj.prod1.kwic.FileBasedStorageManager_ESTest" time="0.003"/>
+    <testcase name="test16_line_negativeIndex_throwsIndexOutOfBounds" classname="kwicdeltaj.prod1.kwic.FileBasedStorageManager_ESTest" time="0.002">
+      <error>java.lang.SecurityException: Unable to create temporary file&#13;
+	at java.io.File.createTempFile(File.java:2057)&#13;
+	at java.io.File.createTempFile(File.java:2109)&#13;
+	at kwicdeltaj.prod1.kwic.FileBasedStorageManager_ESTest.createTempFileWithLines(FileBasedStorageManager_ESTest.java:172)&#13;
+	at kwicdeltaj.prod1.kwic.FileBasedStorageManager_ESTest.test16_line_negativeIndex_throwsIndexOutOfBounds(FileBasedStorageManager_ESTest.java:228)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)&#13;
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#13;
+	at java.lang.reflect.Method.invoke(Method.java:498)&#13;
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)&#13;
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)&#13;
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)&#13;
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:299)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:293)&#13;
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)&#13;
+	at java.lang.Thread.run(Thread.java:750)&#13;
+&#13;
+</error>
+    </testcase>
+    <testcase name="test06" classname="kwicdeltaj.prod1.kwic.FileBasedStorageManager_ESTest" time="0.002"/>
+    <testcase name="test12_initWithValidFile_readsAllLines" classname="kwicdeltaj.prod1.kwic.FileBasedStorageManager_ESTest" time="0.005">
+      <error>java.lang.SecurityException: Unable to create temporary file&#13;
+	at java.io.File.createTempFile(File.java:2057)&#13;
+	at java.io.File.createTempFile(File.java:2109)&#13;
+	at kwicdeltaj.prod1.kwic.FileBasedStorageManager_ESTest.createTempFileWithLines(FileBasedStorageManager_ESTest.java:172)&#13;
+	at kwicdeltaj.prod1.kwic.FileBasedStorageManager_ESTest.test12_initWithValidFile_readsAllLines(FileBasedStorageManager_ESTest.java:186)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)&#13;
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#13;
+	at java.lang.reflect.Method.invoke(Method.java:498)&#13;
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)&#13;
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)&#13;
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)&#13;
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:299)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:293)&#13;
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)&#13;
+	at java.lang.Thread.run(Thread.java:750)&#13;
+&#13;
+</error>
+    </testcase>
+  </testsuite>
+</testrun>

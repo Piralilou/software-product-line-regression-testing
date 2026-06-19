@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="kwicdeltaj.prod1.kwic_Ekstazi" project="kwic-deltaj" tests="8" started="0" failures="0" errors="0" ignored="0">
+  <testcase name="kwicdeltaj.prod1.kwic.StringStorage_ESTest" classname="kwicdeltaj.prod1.kwic.StringStorage_ESTest" incomplete="true"/>
+  <testcase name="kwicdeltaj.prod1.kwic.StopWordManager_ESTest" classname="kwicdeltaj.prod1.kwic.StopWordManager_ESTest" incomplete="true"/>
+  <testcase name="kwicdeltaj.prod1.kwic.Main_ESTest" classname="kwicdeltaj.prod1.kwic.Main_ESTest" incomplete="true"/>
+  <testcase name="kwicdeltaj.prod1.kwic.IndexStorage_ESTest" classname="kwicdeltaj.prod1.kwic.IndexStorage_ESTest" incomplete="true"/>
+  <testcase name="kwicdeltaj.prod1.kwic.IndexManager_ESTest" classname="kwicdeltaj.prod1.kwic.IndexManager_ESTest" incomplete="true"/>
+  <testcase name="kwicdeltaj.prod1.kwic.WordShift_ESTest" classname="kwicdeltaj.prod1.kwic.WordShift_ESTest" incomplete="true"/>
+  <testcase name="kwicdeltaj.prod1.kwic.FileBasedStorageManager_ESTest" classname="kwicdeltaj.prod1.kwic.FileBasedStorageManager_ESTest" incomplete="true"/>
+  <testcase name="kwicdeltaj.prod1.kwic.SaveFile_ESTest" classname="kwicdeltaj.prod1.kwic.SaveFile_ESTest" incomplete="true"/>
+</testrun>

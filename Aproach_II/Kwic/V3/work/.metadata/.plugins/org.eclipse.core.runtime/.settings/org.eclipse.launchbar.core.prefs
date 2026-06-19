@@ -1,0 +1,15 @@
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:Main (2),org.eclipse.launchbar.core.descriptorType.default\:Main (3),org.eclipse.launchbar.core.descriptorType.default\:Main (4),org.eclipse.launchbar.core.descriptorType.default\:Main (1),org.eclipse.launchbar.core.descriptorType.default\:IndexManager_ESTest,org.eclipse.launchbar.core.descriptorType.default\:IndexStorage_ESTest,org.eclipse.launchbar.core.descriptorType.default\:Main_ESTest,org.eclipse.launchbar.core.descriptorType.default\:SaveFile_ESTest,org.eclipse.launchbar.core.descriptorType.default\:StopWordManager_ESTest,org.eclipse.launchbar.core.descriptorType.default\:StringStorage_ESTest,org.eclipse.launchbar.core.descriptorType.default\:WordShift_ESTest,org.eclipse.launchbar.core.descriptorType.default\:DBLPStorageManager_ESTest,org.eclipse.launchbar.core.descriptorType.default\:SaveScreen_ESTest,org.eclipse.launchbar.core.descriptorType.default\:kwicdeltaj.prod1.kwic,org.eclipse.launchbar.core.descriptorType.default\:kwicdeltaj.prod2.kwic,org.eclipse.launchbar.core.descriptorType.default\:kwicdeltaj.prod3.kwic,org.eclipse.launchbar.core.descriptorType.default\:Coverage,org.eclipse.launchbar.core.descriptorType.default\:evosuite-tests,org.eclipse.launchbar.core.descriptorType.default\:Main,org.eclipse.launchbar.core.descriptorType.default\:kwicdeltaj.prod1.kwic (2),org.eclipse.launchbar.core.descriptorType.default\:FileBasedStorageManager_ESTest,org.eclipse.launchbar.core.descriptorType.default\:kwicdeltaj.prod1.kwic_Ekstazi,org.eclipse.launchbar.core.descriptorType.default\:kwic
+eclipse.preferences.version=1
+org.eclipse.launchbar.core.descriptorType.default\:Coverage/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:Coverage/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:DBLPStorageManager_ESTest/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:DBLPStorageManager_ESTest/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:Main\ (1)/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:Main\ (1)/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:Main/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:Main/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:evosuite-tests/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:evosuite-tests/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local

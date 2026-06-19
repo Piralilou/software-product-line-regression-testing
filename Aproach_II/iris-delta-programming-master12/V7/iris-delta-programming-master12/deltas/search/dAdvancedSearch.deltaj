@@ -1,0 +1,42 @@
+delta dAdvancedSearch {
+
+	modifies br.unb.cic.iris.persistence.lucene.EmailDAO {
+
+		adds import java.util.ArrayList;
+		adds import org.apache.lucene.search.BooleanClause;
+		adds import org.apache.lucene.search.BooleanClause.Occur;
+		adds import org.apache.lucene.search.BooleanQuery;
+		adds import org.apache.lucene.search.NumericRangeQuery;
+		adds import org.apache.lucene.analysis.standard.StandardAnalyzer;
+		adds import org.apache.lucene.queryparser.classic.QueryParser;
+		adds import org.apache.lucene.search.ScoreDoc;
+		adds import org.apache.lucene.search.TopDocs;
+
+		adds import br.unb.cic.iris.core.exception.EmailException;
+
+		// Lucene's ParseException conflicts with java.text.ParseException.
+		adds public List<EmailMessage> search(String queryStr) throws EmailException {
+			List<EmailMessage> emails = new ArrayList<EmailMessage>();
+
+			//Default field of search set to "subject".
+			try {
+				Query userQuery = new QueryParser("subject", new
+					StandardAnalyzer()).parse(queryStr);
+				Query typeQuery = new TermQuery(new Term("type", "email"));
+
+				BooleanQuery query = new BooleanQuery();
+				query.add(new BooleanClause(typeQuery, Occur.MUST));
+				query.add(new BooleanClause(userQuery, Occur.MUST));
+
+				IndexSearcher searcher = IndexManager.getSearcher();
+				searcher.search(query, new TCollector(searcher, emails));
+			}
+			catch(Exception e) {
+				e.printStackTrace();
+				throw new
+				EmailException("Error ocurred while retrieving messages from folder.", e);
+			}
+			return emails;
+		}
+	}
+}

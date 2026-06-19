@@ -1,0 +1,52 @@
+delta dBasePersistence {
+	adds {
+		/*
+		 * EmailDAO.java
+		 * ---------------------------------
+		 *  version: 0.0.1
+		 *  date: Sep 18, 2014
+		 *  author: rbonifacio
+		 *  list of changes: (none) 
+		 */
+		package br.unb.cic.iris.persistence;
+		
+		import java.util.Date;
+		import java.util.List;
+		
+		import br.unb.cic.iris.core.exception.EmailException;
+		import br.unb.cic.iris.core.model.EmailMessage;
+		
+		/**
+		 * A DAO for electronic e-mail messages. Note that the current version of the
+		 * persistence concern is quite simple. Indeed, we have only one persistent
+		 * class (an email message).
+		 * 
+		 * @author rbonifacio
+		 */
+		public interface IEmailDAO {
+		
+			/**
+			 * Saves an email message into the database.
+			 * 
+			 * @param message
+			 */
+			public void saveMessage(EmailMessage message) throws EmailException;
+			
+			public Date lastMessageReceived() throws EmailException;
+			
+			public List<EmailMessage> listMessages(String idFolder) throws EmailException;
+		
+		}		
+	}
+	adds {
+		package br.unb.cic.iris.persistence;
+		
+		import br.unb.cic.iris.core.exception.EmailException;
+		import br.unb.cic.iris.core.model.IrisFolder;
+		
+		public interface IFolderDAO {
+			public IrisFolder findByName(String folderName) throws EmailException;
+			public IrisFolder findById(String id) throws EmailException;
+		}			
+	}
+}

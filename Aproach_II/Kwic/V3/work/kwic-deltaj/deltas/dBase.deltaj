@@ -1,0 +1,265 @@
+delta dBase {
+	adds {
+		package kwic;
+
+		import java.util.List;
+		public interface Save {
+			public void save(List<StringStorage> list);
+		}
+	}
+	
+	adds {
+		package kwic;
+
+		public class StringStorage {
+			String left, right, keyword;
+
+			public String getKeyword() {
+				return keyword;
+			}
+
+			public String getLeft() {
+				return left;
+			}
+
+			public String getRight() {
+				return right;
+			}
+
+			public void setKeyword(String keyword) {
+				this.keyword = keyword;
+			}
+
+			public void setLeft(String left) {
+				this.left = left;
+			}
+
+			public void setRight(String right) {
+				this.right = right;
+			}
+		}
+	}
+	
+	adds {
+		package kwic;
+
+		public class IndexStorage {
+			int position;
+			String line;
+			public void setPosition(int i) {
+				position = i;
+			}
+
+			public void setLine(String n) {
+				line = n;
+			}
+
+			public int getPosition() {
+				return position;
+			}
+
+			public String getLine() {
+				return line;
+			}
+		}
+
+	}
+	
+	adds {
+		package kwic;
+
+		import java.util.*;
+
+		public class IndexManager {
+
+			Map<String, List<IndexStorage> > map = new HashMap<String,
+				List<IndexStorage> >();
+
+			public boolean isEmpty() {
+				return map.isEmpty();
+			}
+
+			public void initMap(String word, String line, int pos) {
+
+				IndexStorage index = new IndexStorage();
+				index.setLine(line);
+				index.setPosition(pos);
+
+				if(map.containsKey(word)) {
+					map.get(word).add(index);
+				}
+				else {
+					List<IndexStorage> list = new LinkedList();
+					list.add(index);
+					map.put(word, list);
+				}
+			}
+
+			public List<IndexStorage> ocurrencesOfWord(String word) {
+				return map.get(word);
+			}
+
+			public List<String> sortedWords() {
+				SortedSet<String> keys = new TreeSet<String>(map.keySet());
+				List<String> list = new ArrayList(keys);
+				return list;
+			}
+
+		}
+
+	}
+	
+	adds {
+		package kwic;
+
+		public interface DataStorageManager {
+			public void init();
+
+			public String line(int index);
+
+			public int length();
+
+		}
+
+	}
+	
+	adds {
+		package kwic;
+
+		import java.io.BufferedReader;
+		import java.io.FileReader;
+		import java.io.IOException;
+		import java.util.LinkedList;
+		import java.util.List;
+		
+		public class StopWordManager {
+			public List<String> stopWord(String url) {
+				List<String> list = new LinkedList();
+				try {
+					FileReader file = new FileReader(url);
+					BufferedReader readFile = new BufferedReader(file);
+					String n = readFile.readLine();
+					while (n != null) {
+						list.add(n);
+						n = readFile.readLine();
+					}
+					file.close();
+				} catch (IOException e) {
+					System.err.printf("Error opening: %s.\n", e.getMessage());
+				}
+				return list;
+			}
+		}
+	}
+	
+	adds {
+		package kwic;
+
+		import java.util.*;
+		import java.io.FileWriter;
+		import java.io.IOException;
+		import java.io.PrintWriter;
+
+		public class WordShift { 
+			public List<StringStorage> shiftBegin(List<IndexStorage> list, String word) {
+				List<StringStorage> listFinal = new LinkedList();
+
+				for(IndexStorage n : list) {
+					StringStorage stringStorage = new StringStorage();
+					stringStorage.setKeyword(word);
+					String [] wordS = wordSep(n);
+
+					String left = "";
+					for(int i = 0;
+						i < n.getPosition();
+						i ++) {
+						left = left.concat(wordS[i] + " ");
+					}
+
+					String right = "";
+					for(int j = n.getPosition() + 1;
+						j < wordS.length;
+						j ++) {
+						right = right.concat(" " + wordS[j]);
+					}
+
+					stringStorage.setLeft(left);
+					stringStorage.setRight(right);
+					listFinal.add(stringStorage);
+
+				}
+
+				return listFinal;
+			}
+
+			public String [] wordSep(IndexStorage storage) {
+				String aux = storage.getLine();
+
+				return aux.split(" ");
+			}
+		}
+	}
+	
+	adds {
+		package kwic;
+
+		import java.util.*;
+
+		public class Main {
+			public static void main(String [] args) {
+
+				System.out.println("[****************KWIC*********************]");
+				System.out.println();
+		
+				DataStorageManager dsm = getInput();
+				dsm.init();
+		
+				IndexManager im = new IndexManager();
+		
+				String line;
+		
+				for (int lineNumber = 0; lineNumber < dsm.length(); lineNumber++) {
+					line = dsm.line(lineNumber);
+					String[] words = line.split(" ");
+					for (int pos = 0; pos < words.length; pos++) {
+						im.initMap(words[pos], line, pos);
+					}
+				}
+		
+				List<String> list = im.sortedWords();
+		
+				WordShift ws = new WordShift();
+		
+				StopWordManager stopWordManager = new StopWordManager();
+				List<String> stopWord = stopWordManager.stopWord("stop_words.txt");
+		
+				List<StringStorage> shifted = new LinkedList();
+		
+				for (String n : list) {
+					if (!stopWord.contains(n)) {
+						List<StringStorage> list1 = ws.shiftBegin(im.ocurrencesOfWord(n), n);
+						for (StringStorage j : list1) {
+							shifted.add(j);
+						}
+					}
+				}
+		
+				Save save = getOutput();
+		
+				save.save(shifted);
+		
+				System.out.println("[_________________________________________]");
+				System.out.println("[****************KWIC*********************]");
+
+			}
+
+			static DataStorageManager getInput() {
+				return new FileBasedStorageManager();
+			}
+
+			static Save getOutput() {
+				return new SaveScreen();
+			}
+		}
+	}
+}

@@ -1,0 +1,31 @@
+SPL KwicDeltaJ {
+
+	Features = {KWIC, Base, Input, DBLP, FileIn, Output, Screen, FileOut}
+
+	Deltas = {dBase, dFileOut, dScreen, dDblp, dFileIn}
+
+	Constraints {
+		KWIC & Base & Input & Output;
+		Output & (Screen ^ FileOut);
+		Input & (DBLP ^ FileIn);
+	}
+
+	Partitions {
+		{dBase} when (Base);
+
+		{dDblp} when (DBLP);
+
+		{dFileIn} when (FileIn);
+
+		{dFileOut} when (FileOut);
+
+		{dScreen} when (Screen);
+	}
+
+	Products {
+		Prod1 = {KWIC,Base, Input, FileIn, Output, FileOut};
+		Prod2 = {KWIC, Base, Input, DBLP, Output, FileOut};
+		Prod3 = {KWIC, Base, Input, FileIn, Output, Screen};
+		Prod4 = {KWIC, Base, Input, DBLP, Output,Screen };
+	}
+}

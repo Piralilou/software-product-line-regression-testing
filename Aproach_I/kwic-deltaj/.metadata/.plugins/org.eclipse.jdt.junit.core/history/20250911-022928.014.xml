@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="kwicdeltaj.prod1.kwic_Ekstazi" project="kwic-deltaj" tests="41" started="35" failures="9" errors="7" ignored="0">
+  <testcase name="kwicdeltaj.prod1.kwic.StringStorage_ESTest" classname="kwicdeltaj.prod1.kwic.StringStorage_ESTest" incomplete="true"/>
+  <testcase name="kwicdeltaj.prod1.kwic.StopWordManager_ESTest" classname="kwicdeltaj.prod1.kwic.StopWordManager_ESTest" incomplete="true"/>
+  <testsuite name="kwicdeltaj.prod1.kwic.Main_ESTest" time="0.345">
+    <testcase name="test4" classname="kwicdeltaj.prod1.kwic.Main_ESTest" time="0.117"/>
+    <testcase name="test5" classname="kwicdeltaj.prod1.kwic.Main_ESTest" time="0.017"/>
+    <testcase name="test2" classname="kwicdeltaj.prod1.kwic.Main_ESTest" time="0.034">
+      <error>java.lang.NullPointerException&#13;
+	at kwicdeltaj.prod1.kwic.DBLPStorageManager.length(DBLPStorageManager.java:62)&#13;
+	at kwicdeltaj.prod1.kwic.Main_ESTest.test2(Main_ESTest.java:57)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)&#13;
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#13;
+	at java.lang.reflect.Method.invoke(Method.java:498)&#13;
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)&#13;
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)&#13;
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)&#13;
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:299)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:293)&#13;
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)&#13;
+	at java.lang.Thread.run(Thread.java:750)&#13;
+&#13;
+</error>
+    </testcase>
+    <testcase name="test7_main_withMultipleSpaces_noCrash" classname="kwicdeltaj.prod1.kwic.Main_ESTest" time="0.043">
+      <error>java.lang.NullPointerException&#13;
+	at kwicdeltaj.prod1.kwic.DBLPStorageManager.length(DBLPStorageManager.java:62)&#13;
+	at kwicdeltaj.prod1.kwic.Main.main(Main.java:15)&#13;
+	at kwicdeltaj.prod1.kwic.Main_ESTest.test7_main_withMultipleSpaces_noCrash(Main_ESTest.java:116)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)&#13;
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#13;
+	at java.lang.reflect.Method.invoke(Method.java:498)&#13;
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)&#13;
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)&#13;
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)&#13;
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:299)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:293)&#13;
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)&#13;
+	at java.lang.Thread.run(Thread.java:750)&#13;
+&#13;
+</error>
+    </testcase>
+    <testcase name="test3" classname="kwicdeltaj.prod1.kwic.Main_ESTest" time="0.034">
+      <error>java.lang.NullPointerException&#13;
+	at kwicdeltaj.prod1.kwic.DBLPStorageManager.length(DBLPStorageManager.java:62)&#13;
+	at kwicdeltaj.prod1.kwic.Main.main(Main.java:15)&#13;
+	at kwicdeltaj.prod1.kwic.Main_ESTest.test3(Main_ESTest.java:67)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)&#13;
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#13;
+	at java.lang.reflect.Method.invoke(Method.java:498)&#13;
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)&#13;
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)&#13;
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)&#13;
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:299)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:293)&#13;
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)&#13;
+	at java.lang.Thread.run(Thread.java:750)&#13;
+&#13;
+</error>
+    </testcase>
+    <testcase name="test11_main_calledTwice_withDifferentInputs_noCrash" classname="kwicdeltaj.prod1.kwic.Main_ESTest" time="0.012">
+      <error>java.lang.NullPointerException&#13;
+	at kwicdeltaj.prod1.kwic.DBLPStorageManager.length(DBLPStorageManager.java:62)&#13;
+	at kwicdeltaj.prod1.kwic.Main.main(Main.java:15)&#13;
+	at kwicdeltaj.prod1.kwic.Main_ESTest.test11_main_calledTwice_withDifferentInputs_noCrash(Main_ESTest.java:158)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)&#13;
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#13;
+	at java.lang.reflect.Method.invoke(Method.java:498)&#13;
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)&#13;
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)&#13;
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)&#13;
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:299)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:293)&#13;
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)&#13;
+	at java.lang.Thread.run(Thread.java:750)&#13;
+&#13;
+</error>
+    </testcase>
+    <testcase name="test8_getOutput_returnsSaveFile" classname="kwicdeltaj.prod1.kwic.Main_ESTest" time="0.009"/>
+    <testcase name="test10_main_withUnicodePersian_noCrash" classname="kwicdeltaj.prod1.kwic.Main_ESTest" time="0.022">
+      <error>java.lang.NullPointerException&#13;
+	at kwicdeltaj.prod1.kwic.DBLPStorageManager.length(DBLPStorageManager.java:62)&#13;
+	at kwicdeltaj.prod1.kwic.Main.main(Main.java:15)&#13;
+	at kwicdeltaj.prod1.kwic.Main_ESTest.test10_main_withUnicodePersian_noCrash(Main_ESTest.java:145)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)&#13;
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#13;
+	at java.lang.reflect.Method.invoke(Method.java:498)&#13;
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)&#13;
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)&#13;
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)&#13;
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:299)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:293)&#13;
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)&#13;
+	at java.lang.Thread.run(Thread.java:750)&#13;
+&#13;
+</error>
+    </testcase>
+    <testcase name="test6_main_withEmptyStopWords_simpleInput_noCrash" classname="kwicdeltaj.prod1.kwic.Main_ESTest" time="0.011">
+      <error>java.lang.NullPointerException&#13;
+	at kwicdeltaj.prod1.kwic.DBLPStorageManager.length(DBLPStorageManager.java:62)&#13;
+	at kwicdeltaj.prod1.kwic.Main.main(Main.java:15)&#13;
+	at kwicdeltaj.prod1.kwic.Main_ESTest.test6_main_withEmptyStopWords_simpleInput_noCrash(Main_ESTest.java:101)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)&#13;
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#13;
+	at java.lang.reflect.Method.invoke(Method.java:498)&#13;
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)&#13;
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)&#13;
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)&#13;
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:299)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:293)&#13;
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)&#13;
+	at java.lang.Thread.run(Thread.java:750)&#13;
+&#13;
+</error>
+    </testcase>
+    <testcase name="test9_getInput_returnsFileBasedStorageManager" classname="kwicdeltaj.prod1.kwic.Main_ESTest" time="0.022">
+      <failure>
+        <expected>kwicdeltaj.prod1.kwic.FileBasedStorageManager</expected>
+        <actual>kwicdeltaj.prod1.kwic.DBLPStorageManager</actual>
+        org.junit.ComparisonFailure: expected:&lt;...icdeltaj.prod1.kwic.[FileBased]StorageManager&gt; but was:&lt;...icdeltaj.prod1.kwic.[DBLP]StorageManager&gt;&#13;
+	at org.junit.Assert.assertEquals(Assert.java:117)&#13;
+	at org.junit.Assert.assertEquals(Assert.java:146)&#13;
+	at kwicdeltaj.prod1.kwic.Main_ESTest.test9_getInput_returnsFileBasedStorageManager(Main_ESTest.java:130)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)&#13;
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#13;
+	at java.lang.reflect.Method.invoke(Method.java:498)&#13;
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)&#13;
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)&#13;
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)&#13;
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:299)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:293)&#13;
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)&#13;
+	at java.lang.Thread.run(Thread.java:750)&#13;
+&#13;
+
+      </failure>
+    </testcase>
+    <testcase name="test0" classname="kwicdeltaj.prod1.kwic.Main_ESTest" time="0.011">
+      <error>java.lang.NullPointerException&#13;
+	at kwicdeltaj.prod1.kwic.DBLPStorageManager.length(DBLPStorageManager.java:62)&#13;
+	at kwicdeltaj.prod1.kwic.Main.main(Main.java:15)&#13;
+	at kwicdeltaj.prod1.kwic.Main_ESTest.test0(Main_ESTest.java:45)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)&#13;
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#13;
+	at java.lang.reflect.Method.invoke(Method.java:498)&#13;
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)&#13;
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)&#13;
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)&#13;
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:299)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:293)&#13;
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)&#13;
+	at java.lang.Thread.run(Thread.java:750)&#13;
+&#13;
+</error>
+    </testcase>
+    <testcase name="test1" classname="kwicdeltaj.prod1.kwic.Main_ESTest" time="0.01"/>
+  </testsuite>
+  <testsuite name="kwicdeltaj.prod1.kwic.DBLPStorageManager_ESTest" time="0.384">
+    <testcase name="test06" classname="kwicdeltaj.prod1.kwic.DBLPStorageManager_ESTest" time="0.225"/>
+    <testcase name="test07" classname="kwicdeltaj.prod1.kwic.DBLPStorageManager_ESTest" time="0.022">
+      <failure>java.lang.AssertionError: Cannot load/analyze class kwicdeltaj.prod2.kwic.DBLPStorageManager&#13;
+	at org.evosuite.runtime.EvoAssertions.assertThrownBy(EvoAssertions.java:88)&#13;
+	at org.evosuite.runtime.EvoAssertions.verifyException(EvoAssertions.java:49)&#13;
+	at kwicdeltaj.prod1.kwic.DBLPStorageManager_ESTest.test07(DBLPStorageManager_ESTest.java:136)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)&#13;
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#13;
+	at java.lang.reflect.Method.invoke(Method.java:498)&#13;
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)&#13;
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)&#13;
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)&#13;
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:299)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:293)&#13;
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)&#13;
+	at java.lang.Thread.run(Thread.java:750)&#13;
+&#13;
+</failure>
+    </testcase>
+    <testcase name="test08" classname="kwicdeltaj.prod1.kwic.DBLPStorageManager_ESTest" time="0.006"/>
+    <testcase name="test09" classname="kwicdeltaj.prod1.kwic.DBLPStorageManager_ESTest" time="0.003"/>
+    <testcase name="test19_jsonParse_nonAsciiTitle_persian" classname="kwicdeltaj.prod1.kwic.DBLPStorageManager_ESTest" time="0.023">
+      <failure>
+        <expected>سلام دنیا</expected>
+        <actual/>
+        org.junit.ComparisonFailure: expected:&lt;[سلام دنیا]&gt; but was:&lt;[]&gt;&#13;
+	at org.junit.Assert.assertEquals(Assert.java:117)&#13;
+	at org.junit.Assert.assertEquals(Assert.java:146)&#13;
+	at kwicdeltaj.prod1.kwic.DBLPStorageManager_ESTest.test19_jsonParse_nonAsciiTitle_persian(DBLPStorageManager_ESTest.java:308)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)&#13;
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#13;
+	at java.lang.reflect.Method.invoke(Method.java:498)&#13;
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)&#13;
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)&#13;
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)&#13;
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:299)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:293)&#13;
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)&#13;
+	at java.lang.Thread.run(Thread.java:750)&#13;
+&#13;
+
+      </failure>
+    </testcase>
+    <testcase name="test02" classname="kwicdeltaj.prod1.kwic.DBLPStorageManager_ESTest" time="0.003"/>
+    <testcase name="test13" classname="kwicdeltaj.prod1.kwic.DBLPStorageManager_ESTest" time="0.004">
+      <failure>java.lang.AssertionError: Cannot load/analyze class kwicdeltaj.prod2.kwic.DBLPStorageManager&#13;
+	at org.evosuite.runtime.EvoAssertions.assertThrownBy(EvoAssertions.java:88)&#13;
+	at org.evosuite.runtime.EvoAssertions.verifyException(EvoAssertions.java:49)&#13;
+	at kwicdeltaj.prod1.kwic.DBLPStorageManager_ESTest.test13(DBLPStorageManager_ESTest.java:217)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)&#13;
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#13;
+	at java.lang.reflect.Method.invoke(Method.java:498)&#13;
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)&#13;
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)&#13;
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)&#13;
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:299)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:293)&#13;
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)&#13;
+	at java.lang.Thread.run(Thread.java:750)&#13;
+&#13;
+</failure>
+    </testcase>
+    <testcase name="test03" classname="kwicdeltaj.prod1.kwic.DBLPStorageManager_ESTest" time="0.003"/>
+    <testcase name="test14" classname="kwicdeltaj.prod1.kwic.DBLPStorageManager_ESTest" time="0.006">
+      <failure>java.lang.AssertionError: Cannot load/analyze class kwicdeltaj.prod2.kwic.DBLPStorageManager&#13;
+	at org.evosuite.runtime.EvoAssertions.assertThrownBy(EvoAssertions.java:88)&#13;
+	at org.evosuite.runtime.EvoAssertions.verifyException(EvoAssertions.java:49)&#13;
+	at kwicdeltaj.prod1.kwic.DBLPStorageManager_ESTest.test14(DBLPStorageManager_ESTest.java:233)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)&#13;
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#13;
+	at java.lang.reflect.Method.invoke(Method.java:498)&#13;
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)&#13;
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)&#13;
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)&#13;
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:299)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:293)&#13;
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)&#13;
+	at java.lang.Thread.run(Thread.java:750)&#13;
+&#13;
+</failure>
+    </testcase>
+    <testcase name="test04" classname="kwicdeltaj.prod1.kwic.DBLPStorageManager_ESTest" time="0.003"/>
+    <testcase name="test05" classname="kwicdeltaj.prod1.kwic.DBLPStorageManager_ESTest" time="0.004"/>
+    <testcase name="test20_lengthAndLine_afterManualAssignParsed" classname="kwicdeltaj.prod1.kwic.DBLPStorageManager_ESTest" time="0.004">
+      <failure>
+        <expected>X</expected>
+        <actual/>
+        org.junit.ComparisonFailure: expected:&lt;[X]&gt; but was:&lt;[]&gt;&#13;
+	at org.junit.Assert.assertEquals(Assert.java:117)&#13;
+	at org.junit.Assert.assertEquals(Assert.java:146)&#13;
+	at kwicdeltaj.prod1.kwic.DBLPStorageManager_ESTest.test20_lengthAndLine_afterManualAssignParsed(DBLPStorageManager_ESTest.java:323)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)&#13;
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#13;
+	at java.lang.reflect.Method.invoke(Method.java:498)&#13;
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)&#13;
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)&#13;
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)&#13;
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:299)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:293)&#13;
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)&#13;
+	at java.lang.Thread.run(Thread.java:750)&#13;
+&#13;
+
+      </failure>
+    </testcase>
+    <testcase name="test10" classname="kwicdeltaj.prod1.kwic.DBLPStorageManager_ESTest" time="0.005"/>
+    <testcase name="test00" classname="kwicdeltaj.prod1.kwic.DBLPStorageManager_ESTest" time="0.007"/>
+    <testcase name="test11" classname="kwicdeltaj.prod1.kwic.DBLPStorageManager_ESTest" time="0.013"/>
+    <testcase name="test15_jsonParse_singleTitle" classname="kwicdeltaj.prod1.kwic.DBLPStorageManager_ESTest" time="0.006">
+      <failure>
+        <expected>Alpha</expected>
+        <actual/>
+        org.junit.ComparisonFailure: expected:&lt;[Alpha]&gt; but was:&lt;[]&gt;&#13;
+	at org.junit.Assert.assertEquals(Assert.java:117)&#13;
+	at org.junit.Assert.assertEquals(Assert.java:146)&#13;
+	at kwicdeltaj.prod1.kwic.DBLPStorageManager_ESTest.test15_jsonParse_singleTitle(DBLPStorageManager_ESTest.java:245)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)&#13;
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#13;
+	at java.lang.reflect.Method.invoke(Method.java:498)&#13;
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)&#13;
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)&#13;
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)&#13;
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:299)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:293)&#13;
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)&#13;
+	at java.lang.Thread.run(Thread.java:750)&#13;
+&#13;
+
+      </failure>
+    </testcase>
+    <testcase name="test01" classname="kwicdeltaj.prod1.kwic.DBLPStorageManager_ESTest" time="0.003"/>
+    <testcase name="test12" classname="kwicdeltaj.prod1.kwic.DBLPStorageManager_ESTest" time="0.006"/>
+    <testcase name="test16_jsonParse_multipleTitles_acrossLines" classname="kwicdeltaj.prod1.kwic.DBLPStorageManager_ESTest" time="0.004">
+      <failure>java.lang.AssertionError: expected:&lt;2&gt; but was:&lt;3&gt;&#13;
+	at org.junit.Assert.fail(Assert.java:89)&#13;
+	at org.junit.Assert.failNotEquals(Assert.java:835)&#13;
+	at org.junit.Assert.assertEquals(Assert.java:647)&#13;
+	at org.junit.Assert.assertEquals(Assert.java:633)&#13;
+	at kwicdeltaj.prod1.kwic.DBLPStorageManager_ESTest.test16_jsonParse_multipleTitles_acrossLines(DBLPStorageManager_ESTest.java:257)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)&#13;
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#13;
+	at java.lang.reflect.Method.invoke(Method.java:498)&#13;
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)&#13;
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)&#13;
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)&#13;
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:299)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:293)&#13;
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)&#13;
+	at java.lang.Thread.run(Thread.java:750)&#13;
+&#13;
+</failure>
+    </testcase>
+    <testcase name="test18_init_success_parsesTitles_fromNetworkMock" classname="kwicdeltaj.prod1.kwic.DBLPStorageManager_ESTest" time="0.011">
+      <failure>
+        <expected>Paper A</expected>
+        <actual/>
+        org.junit.ComparisonFailure: expected:&lt;[Paper A]&gt; but was:&lt;[]&gt;&#13;
+	at org.junit.Assert.assertEquals(Assert.java:117)&#13;
+	at org.junit.Assert.assertEquals(Assert.java:146)&#13;
+	at kwicdeltaj.prod1.kwic.DBLPStorageManager_ESTest.test18_init_success_parsesTitles_fromNetworkMock(DBLPStorageManager_ESTest.java:296)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)&#13;
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#13;
+	at java.lang.reflect.Method.invoke(Method.java:498)&#13;
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)&#13;
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)&#13;
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)&#13;
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:299)&#13;
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:293)&#13;
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)&#13;
+	at java.lang.Thread.run(Thread.java:750)&#13;
+&#13;
+
+      </failure>
+    </testcase>
+    <testcase name="test17_jsonParse_emptyTitle" classname="kwicdeltaj.prod1.kwic.DBLPStorageManager_ESTest" time="0.003"/>
+    <testcase name="test22_init_malformedUrl_keyWithSpace_noCrash" classname="kwicdeltaj.prod1.kwic.DBLPStorageManager_ESTest" time="0.009"/>
+    <testcase name="test21_jsonParse_emptyList_returnsEmpty" classname="kwicdeltaj.prod1.kwic.DBLPStorageManager_ESTest" time="0.007"/>
+  </testsuite>
+  <testcase name="kwicdeltaj.prod1.kwic.IndexStorage_ESTest" classname="kwicdeltaj.prod1.kwic.IndexStorage_ESTest" incomplete="true"/>
+  <testcase name="kwicdeltaj.prod1.kwic.IndexManager_ESTest" classname="kwicdeltaj.prod1.kwic.IndexManager_ESTest" incomplete="true"/>
+  <testcase name="kwicdeltaj.prod1.kwic.WordShift_ESTest" classname="kwicdeltaj.prod1.kwic.WordShift_ESTest" incomplete="true"/>
+  <testcase name="kwicdeltaj.prod1.kwic.SaveFile_ESTest" classname="kwicdeltaj.prod1.kwic.SaveFile_ESTest" incomplete="true"/>
+</testrun>
